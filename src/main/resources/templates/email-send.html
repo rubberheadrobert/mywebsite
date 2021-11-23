@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Robert Csorgo's Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="css/navbarcontactstyle.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-light bg-light stick-top">
+  <div class="container-fluid">
+    <a href="#" class="navbar-brand"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarResponsive">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+
+      <ul class ="navbar-nav ml-auto">
+
+        <li class="nav-item active">
+          <a class="nav-link" th:href="@{/}">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/projects}">Projects</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/feedback}">Feedback</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/login}">Login</a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 col-xl-5">
+            <h2>Send me an Email!</h2>
+            <form action="/email-send" method="post" enctype="multipart/form-data" class="main-form needs-validation" novalidate>
+                <label for="name">Name</label>
+                <input type="text" th:name="name" id="name" class="form-control" required>
+
+                <label for="subject">Subject:</label>
+                <input type="text" th:name="subject" id="subject" class="form-control" required>
+
+
+                <label for="text">Message:</label>
+                <input type="text" th:name="text" id="text" class="form-control" required>
+                <br>
+                <button type="submit">Submit</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid padding">
+    <div class="connect">
+        <div class="row text-center padding ">
+            <div class="col-12">
+                <h2>Connect</h2>
+            </div>
+            <div class="col-12 social padding">
+                <a href="https://www.facebook.com/robert.csorgo"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/robert-csorgo/"><i class="fab fa-linkedin"></i></a>
+                <a th:href="@{/email-send}"><i class="fab fa-google"></i></a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

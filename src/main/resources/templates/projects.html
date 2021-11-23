@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Robert Csorgo's Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="css/navbarcontactstyle.css" rel="stylesheet">
+    <link href="css/projectsstyle.css" rel="stylesheet">
+
+    <script>
+        function myFunction1() {
+            var x = document.getElementById("project-one-text");
+              if (x.style.display === "none") {
+                x.style.display = "block";
+              } else {
+                x.style.display = "none";
+              }
+        }
+
+        function myFunction2() {
+            var x = document.getElementById("project-two-text");
+              if (x.style.display === "none") {
+                x.style.display = "block";
+              } else {
+                x.style.display = "none";
+              }
+        }
+
+        function myFunction3() {
+            var x = document.getElementById("project-three-text");
+              if (x.style.display === "none") {
+                x.style.display = "block";
+              } else {
+                x.style.display = "none";
+              }
+        }
+    </script>
+
+    <style>
+
+    </style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-light bg-light stick-top">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+
+            <ul class ="navbar-nav ml-auto">
+
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/}">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/projects}">Projects</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/feedback}">Feedback</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/login}">Login</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<div class="main-body-container">
+
+    <div class="container">
+        <div class="row title">
+            <h4 onclick="myFunction1()">Spring MVC portfolio site using Spring Boot</h4>
+        </div>
+
+        <div class="row">
+            <div class="hide" id="project-one-text">
+                <p>
+                    The website you are on now was build with Spring Boot MVC. It is hosted on DigitalOcecan, whereas the
+                    domain name is provided by Fozzy.
+                </p>
+                <p>
+                    The main parts of this site consists of the controllers, views, model, and services. The many controllers
+                    are used to control the flow of data into the model object and updates the view whenever data changes.
+                    The views are html files, and consist of html, css, javascript and Thymeleaf. I used Thymeleaf as an
+                    alternate to JSP, since I think the code better resembles html, therefore becoming more readable.
+                </p>
+                <p>
+                    As for the services, they allow me to bring great features into the site, like asking for the user's
+                    opinion of the site in the form of a feedback, which the site then saves into a SQLite database file.
+                    It is also possible for users to send be a direct email with the help of the JavaMailSender.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row title">
+            <h4 onclick="myFunction2()">Java FX Activity style desktop application</h4>
+        </div>
+
+        <div class="row hide" id = "project-two-text">
+            <p>
+                This project is the first larger sized Java project I have worked on, and I started it a couple of years ago.
+                In the future, I would like to convert it into a Web application with the help of Spring MVC.
+            </p>
+            <p>
+                The game is one which we like to play in our friend group. We must all think a predetermined amount of words,
+                write them down on small pieces of paper, then shuffle all the slips together and decide teams randomly.
+                This game consists of 3 rounds, each being different to each other, but the goal is the same. Try to guess as
+                many words as possible as a team to win the game.
+            </p>
+            <p>
+                Since Java Fx allows you to design with MVC, that is what I did, with the use of FXML and Java.
+                The Model consisted of the objects I created, like the Player and Team. The view was written in FXML,
+                but I also used SceneBuilder to build them more quickly. As for the Controller, each View has its own
+                Controller where the attributes and behaviors are defined.
+            </p>
+            <p>
+                Source Code: <a href="https://github.com/rubberheadrobert/diyActivity.git">D.I.Y Activity</a>
+            </p>
+        </div>
+
+<!--        <div class="row title">-->
+<!--            <h4 onclick="myFunction3()">Click here</h4>-->
+<!--        </div>-->
+
+<!--        <div class="row">-->
+<!--            <p class="hide" id="project-three-text">See me now!</p>-->
+<!--        </div>-->
+    </div>
+
+</div>
+
+<div class="container-fluid padding">
+    <div class="connect">
+        <div class="row text-center padding ">
+            <div class="col-12">
+                <h2>Connect</h2>
+            </div>
+            <div class="col-12 social padding">
+                <a href="https://www.facebook.com/robert.csorgo"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/robert-csorgo/"><i class="fab fa-linkedin"></i></a>
+                <a th:href="@{/email-send}"><i class="fab fa-google"></i></a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
